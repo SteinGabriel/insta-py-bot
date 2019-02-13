@@ -1,0 +1,1 @@
+buddhaland_comments = [u'Amazing page 😍😍 Check my page too! ', u'Thank you for sharing! 🙏 Take a look at my account :)']

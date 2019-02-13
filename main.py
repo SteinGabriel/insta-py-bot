@@ -1,18 +1,15 @@
 # imports
 import os
 from bot import InstaBot
+from quota_profiles import trusted_mid
+from ig_profiles import buddhaland_
 
-username = 'buddhaland_' 
-password = os.environ['buddhaland_pass'] 
-targets = ['buddhism__', 'buddhaquotes_', 'buddhist_poetry']
-tags = ['buddha', 'enlightenment', 'buddhism', 'meditation', 'yoga'] 
-comments = [u'Amazing page 😍😍 Check my page too! ', u'Thank you for sharing! 🙏 Take a look at my account :)']
+while True:
+    instaBot = InstaBot(buddhaland_.username, 
+                        buddhaland_.password, 
+                        buddhaland_.targets, 
+                        buddhaland_.tags, 
+                        like = False, comment = True, follow = True, unfollow = True,
+                        headless_browser = True, comments = comments, quota_profile = trusted_mid)
 
-instaBot = InstaBot(username, 
-                    password, 
-                    targets, 
-                    tags, 
-                    like = True, comment = True, follow = True, unfollow = True,
-                    headless_browser = True, comments = comments)
-
-instaBot.run()
+    instaBot.run()

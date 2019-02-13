@@ -1,0 +1,1 @@
+buddhaland_tags = ['buddha', 'enlightenment', 'buddhism', 'meditation', 'yoga'] 
