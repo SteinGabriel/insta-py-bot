@@ -1,15 +1,22 @@
 # imports
 import os
-from bot import InstaBot
-from quota_profiles import trusted_mid
-from ig_profiles import buddhaland_
+import sys
+from ig_profiles import buddhaland_, matchalovers, ligiapiresco
 
+def create_bot_profile():
+    if len(sys.argv) == 1:
+        print('Error ==> Missing profile argument.')
+        quit()
+    
+    ig_profile = sys.argv[1]
+    
+    if ig_profile == 'buddhaland_':
+        return buddhaland_.get_bot_profile()
+    if ig_profile == 'ligiapiresco':
+        return ligiapiresco.get_bot_profile()
+    if ig_profile == 'matchalovers':
+        return matchalovers.get_bot_profile()
+        
 while True:
-    instaBot = InstaBot(buddhaland_.username, 
-                        buddhaland_.password, 
-                        buddhaland_.targets, 
-                        buddhaland_.tags, 
-                        like = False, comment = True, follow = True, unfollow = True,
-                        headless_browser = True, comments = comments, quota_profile = trusted_mid)
-
+    instaBot = create_bot_profile()
     instaBot.run()
