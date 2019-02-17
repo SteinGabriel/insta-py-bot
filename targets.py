@@ -9,3 +9,6 @@ matchalovers_targets = ['matcha.nyc', 'matchanmore', 'jadeleafmatcha', 'matcha.l
             'matchacafemaiko', 'uajimatcha']
             
 ligiapiresco_targets = ['ootdmagazine', 'streetstyle__daily', 'fashion.voyage', 'fashion4perfection', 'blogging4style', 'vancitybusinessbabes']
+
+_steinjack_targets = ['caiotravels', 'maladeviagem', 'vazaonde', 'estevampelomundo', 'manentelucas', 'vidademochila', 'naomeesperaprojantar', 'giomanfroi',
+            'isthisreal', 'blogumviajante', 'paixaoporviajar', 'nosnatrip']

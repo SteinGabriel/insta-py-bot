@@ -12,3 +12,4 @@ class RelBounds:
     
 ligiapiresco_rel_bounds = RelBounds(True, True, 200, 8000, 100, 30)
 buddhaland_rel_bounds = RelBounds(True, True, 120, 3000, 150, 15)
+_steinjack_rel_bounds = RelBounds(True, True, 100, 4000, 110, 10)

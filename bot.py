@@ -2,13 +2,14 @@ from instapy import InstaPy
 from instapy import smart_run
 
 class InstaBot:
-    def __init__(self, username, password, targets = [], tags = [], like = False, comment = False,
+    def __init__(self, username, password, targets = [], tags = [], like = False, like_by_feed = False, comment = False,
                         follow = False, unfollow = False, headless_browser = False, comments = [], quota_profile = {}, rel_bounds = {} ):
         self.username = username
         self.password = password
         self.targets = targets
         self.tags = tags
         self.like = like
+        self.like_by_feed = like_by_feed
         self.comment = comment
         self.follow = follow
         self.unfollow = unfollow
@@ -42,6 +43,8 @@ class InstaBot:
 
     def run(self):
         with smart_run(self.session):
+            if self.like_by_feed:
+                self.session.like_by_feed(amount=20, randomize=True, unfollow=True, interact=True)
             if self.like:
                 self.session.like_by_tags(self.tags, amount=15)
             if self.comment:
@@ -51,7 +54,7 @@ class InstaBot:
             if self.follow:
                 self.session.follow_user_followers(self.targets, amount=30, randomize=True)
             if self.unfollow:
-                self.session.unfollow_users(amount=45, InstapyFollowed=(True, "nonfollowers"), unfollow_after=72*60*60, sleep_delay=350)
+                self.session.unfollow_users(amount=45, InstapyFollowed=(True, "nonfollowers"), unfollow_after=72*60*60, sleep_delay=300)
 
 
 

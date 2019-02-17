@@ -1,7 +1,7 @@
 # imports
 import os
 import sys
-from ig_profiles import buddhaland_, matchalovers, ligiapiresco
+from ig_profiles import buddhaland_, matchalovers, ligiapiresco, _steinjack
 
 def create_bot_profile():
     if len(sys.argv) == 1:
@@ -16,6 +16,8 @@ def create_bot_profile():
         return ligiapiresco.get_bot_profile()
     if ig_profile == 'matchalovers':
         return matchalovers.get_bot_profile()
+    if ig_profile == '_steinjack':
+        return _steinjack.get_bot_profile()
         
 while True:
     instaBot = create_bot_profile()
